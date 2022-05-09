@@ -3,6 +3,10 @@
   "bin": {
     "codeart": "./src/main.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/electblake/node-codeart-cli"
+  },
   "license": "MIT",
   "version": "0.1.0",
   "type": "module",
