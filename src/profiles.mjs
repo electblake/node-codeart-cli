@@ -21,7 +21,7 @@ export function getSnippet(argv) {
   if (!argv.account) {
     throw new Error('account is required')
   }
-  return `\n# codeartifact login on every shell (token ttl is 12 hours)
+  return `\n# codeart-cli auto-login on every shell (token ttl is 12 hours)
 aws codeartifact login --tool=npm \\
   --repository=${argv.repository} \\
   --duration-seconds=43200 \\

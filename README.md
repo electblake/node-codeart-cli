@@ -24,3 +24,9 @@ npm i -g codeart-cli
 ```bash
 codeart --help
 ```
+
+### Recommended
+```bash
+codeart install --interactive
+codeart uninstall --interactive
+```
