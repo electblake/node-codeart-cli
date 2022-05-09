@@ -8,6 +8,9 @@
   "engines": {
     "node": "~14.19.2"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules $(npm bin)/jest",
     "lint": "$(npm bin)/eslint --fix ./src/**/*js"
