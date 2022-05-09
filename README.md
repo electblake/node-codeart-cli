@@ -1,4 +1,4 @@
-# node-codeart-cli
+# codeart-cli
 auto-login to your codeartfact registry for npm
 
 ## Features
