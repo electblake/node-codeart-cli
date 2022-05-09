@@ -3,6 +3,11 @@
   "bin": {
     "codeart": "./src/main.mjs"
   },
+  "keywords": [
+    "aws-codeartifact",
+    "npm-registry",
+    "private-packages"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/electblake/node-codeart-cli"
