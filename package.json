@@ -3,7 +3,7 @@
   "bin": {
     "codeart": "./src/main.mjs"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "engines": {
     "node": ">=14.0.0"
