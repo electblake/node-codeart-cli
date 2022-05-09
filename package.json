@@ -13,7 +13,7 @@
     "url": "https://github.com/electblake/node-codeart-cli"
   },
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "engines": {
     "node": ">=14.0.0"
