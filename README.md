@@ -6,16 +6,17 @@ auto-login to your codeartfact registry for npm
 - Uninstall codeartifact auto-login from your shell
 - Remove codeartifact registry (and all related codeartifact) from `~/.npmrc`)
 - Interactive mode utilizes aws-sdk to easily setup whatever codeartifact registry you wish
+- Uses ECMAScript modules and jsdoc instead of TypeScript
+- Requires Node 14+
 
+### Requirements
+
+**This tool uses ECMAScript Modules, so node 14 or greater is required**
 ## Install
 
 ```bash
 npm i -g codeart-cli
 ```
-
-### Requirements
-
-This tool uses ECMAScript Modules, so node 14 or greater is required
 
 
 ## Usage

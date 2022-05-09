@@ -3,6 +3,7 @@
   "bin": {
     "codeart": "./src/main.mjs"
   },
+  "license": "MIT",
   "version": "0.0.3",
   "type": "module",
   "engines": {
