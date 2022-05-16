@@ -31,6 +31,40 @@ aws codeartifact login --tool=npm \\
 
 /**
  *
+ * @typedef {object} ConfiguredRegistry
+ * @property {string} filepath path to shell profile
+ * @property {string} content content of shell profile
+ */
+/**
+ * Get registry information already set in npmrc
+ *
+ * @returns {ConfiguredRegistry|null} configured registry in `~/.npmrc`
+ */
+export function getConfiguredRegistry() {
+  const filepath = path.join(homedir(), '.npmrc')
+  if (fs.existsSync(filepath)) {
+    const content = fs.readFileSync(filepath, 'utf8').toString()
+    const pattern =
+      // eslint-disable-next-line max-len
+      /registry=https:\/\/([a-z0-9\_\-A-Z]+)-([0-9]+).d.codeartifact.([a-z0-9\-]+).amazonaws.com\/npm\/([a-z0-9A-Z\-\_]+)\//g
+    const matches = pattern.exec(content)
+    if (matches && matches.length > 1) {
+      const [_, domain, account, region, repository] = matches
+      if (domain && account && region && repository) {
+        return {
+          domain,
+          account,
+          region,
+          repository,
+        }
+      }
+    }
+  }
+  return null
+}
+
+/**
+ *
  * @typedef {object} ShellProfile
  * @property {string} filepath path to shell profile
  * @property {string} content content of shell profile
