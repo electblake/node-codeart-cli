@@ -23,8 +23,10 @@
     ".npmrc"
   ],
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules $(npm bin)/jest",
-    "lint": "$(npm bin)/eslint --fix ./src/**/*js"
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint:ci": "$(npm bin)/eslint ./src/**/*js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "aws-sdk": "^2.1131.0",
@@ -38,6 +40,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jsdoc": "^39.2.9",
     "husky": "^8.0.1",
-    "jest": "^28.1.0"
+    "lint-staged": "^12.4.1",
+    "vitest": "^0.12.6"
   }
 }
