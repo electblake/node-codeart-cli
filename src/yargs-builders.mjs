@@ -1,6 +1,7 @@
 import AWS from 'aws-sdk'
 import inquirer from 'inquirer'
 import log from './logger.mjs'
+import { getConfiguredRegistry } from './profiles.mjs'
 
 /**
  * build defaults and hints
@@ -9,18 +10,22 @@ import log from './logger.mjs'
  * @returns {object} yargs builder object
  */
 export const defaultBuilder = async (yargs) => {
+  const registry = getConfiguredRegistry()
   yargs.options({
     domain: {
       type: 'string',
       description: 'codeartifact domain name',
+      default: registry && registry.domain ? registry.domain : undefined,
     },
     account: {
       type: 'number',
       description: 'AWS Account ID',
+      default: registry && registry.account ? registry.account : undefined,
     },
     repository: {
       type: 'string',
       description: 'codeartifact repository name',
+      default: registry && registry.repository ? registry.repository : undefined,
     },
     profile: {
       type: 'string',
@@ -30,6 +35,7 @@ export const defaultBuilder = async (yargs) => {
     region: {
       type: 'string',
       description: 'optional parameter to pass in aws region',
+      default: registry && registry.region ? registry.region : undefined,
     },
   })
 
@@ -83,5 +89,7 @@ export const defaultBuilder = async (yargs) => {
       yargs.default('repository', answers.selected.name)
       yargs.default('account', answers.selected.domainOwner)
     }
+  } else {
+    AWS.config.update({ region: yargs.argv.region })
   }
 }
