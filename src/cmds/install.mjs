@@ -12,9 +12,6 @@ export const builder = defaultBuilder
 
 export const handler = async function (argv) {
   await installShellProfile(argv)
-  if (argv.login) {
-    await shelljs.exec()
-  }
 }
 
 /**
