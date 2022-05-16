@@ -1,3 +1,3 @@
 export default {
-  '*.js{m}': '$(npm bin)/eslint --cache --fix',
+  '*.{mjs,js}': 'eslint --cache --fix',
 }
